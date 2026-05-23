@@ -1,0 +1,58 @@
+export const mockPredictions = [
+  {
+    studentId: 1,
+    predictedGrade: 'A',
+    confidence: 92,
+    factors: ['High attendance', 'Consistent study hours', 'Active extracurricular'],
+    trend: 'stable',
+  },
+  {
+    studentId: 2,
+    predictedGrade: 'B',
+    confidence: 78,
+    factors: ['Good attendance', 'Moderate study hours'],
+    trend: 'improving',
+  },
+  {
+    studentId: 3,
+    predictedGrade: 'C',
+    confidence: 65,
+    factors: ['Low attendance', 'Minimal study hours'],
+    trend: 'declining',
+  },
+  {
+    studentId: 4,
+    predictedGrade: 'A',
+    confidence: 95,
+    factors: ['Excellent attendance', 'High study hours', 'Active extracurricular'],
+    trend: 'stable',
+  },
+  {
+    studentId: 5,
+    predictedGrade: 'B',
+    confidence: 70,
+    factors: ['Moderate attendance', 'Low study hours', 'Active extracurricular'],
+    trend: 'stable',
+  },
+  {
+    studentId: 6,
+    predictedGrade: 'D',
+    confidence: 80,
+    factors: ['Very low attendance', 'Minimal study hours', 'No extracurricular'],
+    trend: 'declining',
+  },
+  {
+    studentId: 7,
+    predictedGrade: 'A',
+    confidence: 88,
+    factors: ['High attendance', 'Good study hours', 'Active extracurricular'],
+    trend: 'improving',
+  },
+  {
+    studentId: 8,
+    predictedGrade: 'C',
+    confidence: 60,
+    factors: ['Low attendance', 'Minimal study hours'],
+    trend: 'declining',
+  },
+];
