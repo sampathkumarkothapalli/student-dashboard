@@ -1,16 +1,36 @@
-# React + Vite
+# Student Performance Dashboard 🎓
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and beautifully designed web application built with React and Vite to track, analyze, and predict student academic performance. 
 
-Currently, two official plugins are available:
+## 🌐 Live Demo
+**Access the live application here:** [https://student-dashboard-sk.vercel.app/](https://student-dashboard-sk.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
+- **Interactive Dashboard:** View overall performance, CGPA trends, and attendance at a glance.
+- **Detailed Analytics:** Track performance across different semesters with dynamic charts and visual insights.
+- **Academic Setup:** Easily configure your regulation, branches, subjects, and enter marks to generate reports.
+- **Responsive Design:** A fully responsive "glassmorphism" UI that works perfectly on desktops, tablets, and mobile devices.
+- **Dark Theme:** Beautiful dark theme designed for modern aesthetics and reduced eye strain.
 
-## React Compiler
+## 🛠️ Tech Stack
+- **Frontend:** React.js, Vite, HTML5, CSS3 (Custom Glassmorphism UI)
+- **Backend:** Spring Boot, Java
+- **Database:** PostgreSQL (Hosted on Neon)
+- **Deployment:** Vercel (Frontend), Render (Backend)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Getting Started Locally
 
-## Expanding the ESLint configuration
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/sampathkumarkothapalli/student-dashboard.git
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
