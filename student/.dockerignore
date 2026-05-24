@@ -1,0 +1,27 @@
+# Version control
+.git
+.gitignore
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# Build artifacts
+target/
+*.jar
+*.war
+
+# Local SDKs and embedded tools
+jdk21/
+maven/
+
+# Local Environment variables and secrets
+.env
+custom_hosts.txt
+
+# Logs and system files
+*.log
+*.zip
+*.bat
+.DS_Store
