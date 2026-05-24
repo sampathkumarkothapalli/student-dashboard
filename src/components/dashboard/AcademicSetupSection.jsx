@@ -94,14 +94,26 @@ const AcademicSetupSection = ({ subjects = [], marks = [], onDataAdded }) => {
           ) : (
             <ul style={{ marginBottom: '1rem', listStyle: 'none', padding: 0 }}>
               {subjects.map(s => (
-                <li key={s.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.8rem 0', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
-                  <div>
-                    <strong>{s.subjectName}</strong> ({s.subjectCode || 'N/A'}) - {s.semester} - {s.credits} Credits {s.customSubject && <span style={{fontSize:'0.8em', color:'var(--teal)'}}>(Custom)</span>}
-                  </div>
-                  <div style={{ display: 'flex', gap: '0.5rem' }}>
-                    <button className="btn-edit" onClick={() => handleEditSubject(s)} style={{ background: 'transparent', border: '1px solid var(--teal)', color: 'var(--teal)', padding: '4px 10px', borderRadius: '4px', cursor: 'pointer' }}>✏ Edit</button>
-                    <button className="btn-remove" onClick={() => handleRemoveSubjectClick(s)} style={{ background: 'transparent', border: '1px solid var(--coral)', color: 'var(--coral)', padding: '4px 10px', borderRadius: '4px', cursor: 'pointer' }}>🗑 Remove</button>
-                  </div>
+                <li key={s.id} style={{ padding: '0.8rem 0', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                  {showConfirmModal && subjectToRemove?.id === s.id ? (
+                    <div style={{ padding: '1rem', background: 'rgba(255, 107, 107, 0.1)', border: '1px solid var(--coral)', borderRadius: '8px' }}>
+                      <p style={{ marginBottom: '0.8rem', fontWeight: 'bold' }}>Remove "{s.subjectName}" and all its marks?</p>
+                      <div style={{ display: 'flex', gap: '1rem' }}>
+                        <button className="modal-btn" onClick={() => { setShowConfirmModal(false); setSubjectToRemove(null); }} style={{ padding: '4px 12px', background: 'rgba(255,255,255,0.1)' }}>Cancel</button>
+                        <button className="modal-btn" onClick={confirmRemoveSubject} style={{ padding: '4px 12px', background: 'var(--coral)', color: '#fff' }}>Remove</button>
+                      </div>
+                    </div>
+                  ) : (
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <div>
+                        <strong>{s.subjectName}</strong> ({s.subjectCode || 'N/A'}) - {s.semester} - {s.credits} Credits {s.customSubject && <span style={{fontSize:'0.8em', color:'var(--teal)'}}>(Custom)</span>}
+                      </div>
+                      <div style={{ display: 'flex', gap: '0.5rem' }}>
+                        <button className="btn-edit" onClick={() => handleEditSubject(s)} style={{ background: 'transparent', border: '1px solid var(--teal)', color: 'var(--teal)', padding: '4px 10px', borderRadius: '4px', cursor: 'pointer' }}>✏ Edit</button>
+                        <button className="btn-remove" onClick={() => handleRemoveSubjectClick(s)} style={{ background: 'transparent', border: '1px solid var(--coral)', color: 'var(--coral)', padding: '4px 10px', borderRadius: '4px', cursor: 'pointer' }}>🗑 Remove</button>
+                      </div>
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>
@@ -162,18 +174,7 @@ const AcademicSetupSection = ({ subjects = [], marks = [], onDataAdded }) => {
         </div>
       </div>
 
-      {showConfirmModal && (
-        <div className="modal-overlay" style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 10000 }}>
-          <div className="glass-card" style={{ width: '90%', maxWidth: '400px', padding: '2rem', textAlign: 'center' }}>
-            <h3>Remove this subject?</h3>
-            <p style={{ margin: '1rem 0', color: 'var(--text-secondary)' }}>This will also remove all marks and attendance associated with "{subjectToRemove?.subjectName}".</p>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '1.5rem' }}>
-              <button className="modal-btn" onClick={() => setShowConfirmModal(false)} style={{ background: 'rgba(255,255,255,0.1)' }}>Cancel</button>
-              <button className="modal-btn" onClick={confirmRemoveSubject} style={{ background: 'var(--coral)', color: '#fff' }}>Remove</button>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Confirmation is now inline within the subject list */}
     </section>
   );
 };

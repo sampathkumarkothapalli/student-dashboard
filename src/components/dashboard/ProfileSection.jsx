@@ -203,6 +203,10 @@ const ProfileSection = () => {
                  <input type="text" className="auth-input" value={editForm.rollNumber || ''} onChange={(e) => handleEditChange('rollNumber', e.target.value)} />
               </div>
               <div className="auth-form-group">
+                 <label className="auth-label">Department</label>
+                 <input type="text" className="auth-input" value={editForm.department || ''} onChange={(e) => handleEditChange('department', e.target.value)} />
+              </div>
+              <div className="auth-form-group">
                  <label className="auth-label">Email</label>
                  <input type="text" className="auth-input" value={editForm.email || ''} onChange={(e) => handleEditChange('email', e.target.value)} />
               </div>

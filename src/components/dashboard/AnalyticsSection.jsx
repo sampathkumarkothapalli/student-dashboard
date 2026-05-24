@@ -21,6 +21,7 @@ const baseScale = {
 
 const AnalyticsSection = ({ marks = [], analytics = [], attendance = [] }) => {
   const latestAnalytics = analytics && analytics.length > 0 ? analytics[analytics.length - 1] : { sgpa: 0, cgpa: 0, percentage: 0 };
+  const displayPercentage = latestAnalytics.percentage || (latestAnalytics.cgpa > 0 ? ((latestAnalytics.cgpa * 10) - 7.5) : 0);
 
   const barColors = [c.primary, c.teal, c.amber, c.coral, c.pink, c.blue, c.lime];
   const subjectBar = useMemo(() => ({
@@ -104,7 +105,7 @@ const AnalyticsSection = ({ marks = [], analytics = [], attendance = [] }) => {
                 <div className="analytics-stat-label">CGPA</div>
               </div>
               <div className="glass-card analytics-stat">
-                <div className="analytics-stat-value">{latestAnalytics.percentage?.toFixed(2) || '0.00'}%</div>
+                <div className="analytics-stat-value">{displayPercentage.toFixed(2)}%</div>
                 <div className="analytics-stat-label">Percentage</div>
               </div>
             </div>
