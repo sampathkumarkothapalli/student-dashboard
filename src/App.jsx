@@ -76,28 +76,30 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="page-enter">
+    <>
       <Navbar onSemesterClick={(sem) => setActiveSemester(sem)} />
-      <HomeSection />
-      
-      <DashboardSection marks={globalMarks} analytics={globalAnalytics} attendance={globalAttendance} />
-      <AnalyticsSection
-        marks={globalMarks}
-        analytics={globalAnalytics}
-        attendance={globalAttendance}
-        activeSemester={activeSemester}
-        setActiveSemester={setActiveSemester}
-      />
-      <PredictionSection />
+      <div className="page-enter">
+        <HomeSection />
+        
+        <DashboardSection marks={globalMarks} analytics={globalAnalytics} attendance={globalAttendance} />
+        <AnalyticsSection
+          marks={globalMarks}
+          analytics={globalAnalytics}
+          attendance={globalAttendance}
+          activeSemester={activeSemester}
+          setActiveSemester={setActiveSemester}
+        />
+        <PredictionSection />
 
-      <AcademicSetupSection 
-        subjects={globalSubjects} 
-        marks={globalMarks} 
-        onDataAdded={checkData} 
-      />
-      <ProfileSection />
-      <Footer />
-    </div>
+        <AcademicSetupSection 
+          subjects={globalSubjects} 
+          marks={globalMarks} 
+          onDataAdded={checkData} 
+        />
+        <ProfileSection />
+        <Footer />
+      </div>
+    </>
   );
 };
 
