@@ -27,3 +27,6 @@ student/target/
 student/jdk21/
 student/maven/
 *.zip
+
+.env
+

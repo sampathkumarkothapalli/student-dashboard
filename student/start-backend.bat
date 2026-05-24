@@ -13,5 +13,5 @@ if not defined JAVA_HOME (
 echo Using JAVA_HOME=%JAVA_HOME%
 set "PATH=%JAVA_HOME%\bin;%~dp0maven\apache-maven-3.9.6\bin;%PATH%"
 
-call mvn spring-boot:run
+call mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Djdk.net.hosts.file=custom_hosts.txt"
 pause
