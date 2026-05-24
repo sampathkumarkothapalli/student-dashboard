@@ -717,3 +717,41 @@ select.auth-input option {
   .auth-container { flex-direction: column; }
   .auth-image-side { display: none; }
 }
+
+/* === Modal Responsive Fixes === */
+@media (max-width: 768px) {
+  .modal-card {
+    padding: 1.5rem !important;
+    margin: 1rem !important;
+    width: calc(100% - 2rem) !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .modal-overlay {
+    padding: 0 !important;
+  }
+}
+@media (max-width: 480px) {
+  .modal-card {
+    padding: 1.2rem !important;
+    margin: 0.5rem !important;
+    width: calc(100% - 1rem) !important;
+  }
+  .logout-icon {
+    font-size: 2.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .logout-title {
+    font-size: 1.2rem !important;
+  }
+  .modal-body {
+    gap: 1rem !important;
+  }
+  .modal-header {
+    margin-bottom: 1rem !important;
+  }
+  .profile-photo-preview, .profile-avatar-preview {
+    width: 70px !important;
+    height: 70px !important;
+  }
+}

@@ -1084,3 +1084,23 @@ body::before {
 .pagination-controls button:disabled {
   opacity: 0.3; cursor: not-allowed;
 }
+
+/* === Responsive Overrides & Modal Fixes === */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+* {
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  .nav-links {
+    right: 0 !important;
+    transform: translateX(100%) !important;
+    max-width: 80vw !important;
+  }
+  .nav-links.open {
+    transform: translateX(0) !important;
+  }
+}
